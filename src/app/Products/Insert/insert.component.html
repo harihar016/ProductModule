@@ -1,0 +1,21 @@
+
+<div class="insert">
+    <h2>Please Insert a New Product of type {{name}}</h2>
+    <div class="container">
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group" *ngFor="let detail of details">
+              <div class="label">
+                <label for="name">{{detail.caption}}</label>
+              </div>
+              <div class="input">
+                <input type="{{detail.type=='bool' ? 'checkbox' : detail.type}}" id="name" defaultValue="{{detail.defaultValue}}">
+              </div>
+              <div [hidden]="name.valid || name.pristine"
+                   class="alert">
+                {{detail.validationMessage}}
+              </div>
+            </div>
+          </form>
+    </div>
+</div>
+

@@ -1,0 +1,15 @@
+<!-- <div *ngFor="let product of products">
+    <h2>{{product.name}}</h2>
+  
+      <p>
+        {{product.definitionUrl}}
+      </p>
+      <a routerLink="/product/{{product.name}}">Add {{product.name}}</a>
+</div> -->
+<div class="product-list">
+    <ul class="product">
+        <li *ngFor="let product of products">
+            <a  class="badge" routerLink="/product/{{product.name}}">Add</a> {{product.name}}
+        </li>
+    </ul>
+</div>
